@@ -7,6 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class event1 {
     public static void main(String[] args) {
@@ -20,6 +22,11 @@ public class event1 {
             }
         });
 
+        frame.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+                System.out.println("Key pressed: " + e.getKeyChar());
+            }
+        });
         frame.add(btn);
         frame.setSize(150, 100);
         frame.setLayout(new FlowLayout(FlowLayout.CENTER));
